@@ -1,0 +1,402 @@
+:root {
+  --screen-brightness: 0%;
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 0 10px;
+  color: white;
+  font-size: 13px;
+  position: relative;
+  z-index: 1000;
+}
+
+.navigation-options {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-logo {
+  height: 16px;
+  width: auto;
+}
+
+.nav-options-main {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-options-sub-item {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.nav-options-sub-item:hover {
+  opacity: 1;
+}
+
+.navigation-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  min-width: 200px;
+  background: rgba(40, 40, 40, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 8px;
+  padding: 4px;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.1s ease-in-out;
+}
+
+.dropdown-header {
+  padding: 8px 10px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4px;
+}
+
+.dropdown-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 4px 0;
+}
+
+/* WiFi Icon Styles */
+.wifi-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.wifi-bar {
+  font-size: 14px;
+}
+
+.wifi-bar.empty {
+  opacity: 0.3;
+}
+
+/* Battery Styles */
+.battery {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.battery i {
+  font-size: 14px;
+}
+
+.battery.charging i {
+  color: #30d158;
+}
+
+.battery.low i {
+  color: #ff453a;
+}
+
+.date-time {
+  display: flex;
+  gap: 8px;
+}
+
+/* Specific dropdown positioning */
+.wifi-dropdown {
+  right: -50%;
+}
+
+.control-dropdown {
+  padding: 16px;
+  right: -140px !important;
+  background: rgba(40, 40, 40, 0.85);
+  backdrop-filter: blur(25px);
+}
+
+.battery-dropdown {
+  right: -50%;
+}
+
+.datetime-dropdown {
+  right: 0;
+  min-width: 250px;
+}
+
+.current-date {
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add hover effects */
+.stats-item:hover {
+  opacity: 0.8;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .navigation-container {
+    font-size: 12px;
+  }
+
+  .stats-item {
+    font-size: 11px;
+  }
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.control-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.control-item.large {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.control-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.control-header i {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Icon-specific backgrounds */
+.control-header .fa-wifi {
+  background: #0984e3;
+}
+
+.control-header .fa-bluetooth-b {
+  background: #0984e3;
+}
+
+.control-header .fa-broadcast-tower {
+  background: #00b894;
+}
+
+.control-header .fa-moon {
+  background: #6c5ce7;
+}
+
+.control-header .fa-expand-arrows-alt {
+  background: #00cec9;
+}
+
+.control-header .fa-mirror {
+  background: #0984e3;
+}
+
+.control-header .fa-sun {
+  background: #fdcb6e;
+  color: #000;
+}
+
+.control-header .fa-volume-up {
+  background: #e17055;
+}
+
+.control-header .fa-keyboard {
+  background: #636e72;
+}
+
+.control-header .fa-music {
+  background: #e84393;
+}
+
+.control-status {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.control-slider {
+  grid-column: span 3;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 4px;
+}
+
+.slider-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.slider-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+.slider-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: width 0.1s ease;
+}
+
+.slider-knob {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: left 0.1s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider-knob:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.control-footer {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.footer-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-item i {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Add screen brightness overlay */
+.screen-brightness-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, var(--screen-brightness));
+  pointer-events: none;
+  z-index: 9999;
+  transition: background 0.2s ease;
+}
+
+.wifi-disconnected {
+  opacity: 0.5;
+  position: relative;
+}
+
+.wifi-disconnected::after {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  height: 18px;
+  background-color: currentColor;
+  transform: rotate(45deg);
+  top: -4px;
+  left: 8px;
+}
+
+.dropdown-item.disabled {
+  opacity: 0.5;
+  cursor: default;
+  color: var(--text-secondary);
+}
+
+.dropdown-item.disabled:hover {
+  background-color: transparent;
+}

@@ -1,0 +1,39 @@
+.loader-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.loader-content {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 80px;
+  gap: 30px;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.pineapple-logo {
+  width: auto;
+  height: 60px;
+}
+
+.loader-bar-container {
+  width: 300px;
+  height: 6px;
+  background-color: #2f2e2e;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.loader-bar {
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: width 40ms linear;
+}

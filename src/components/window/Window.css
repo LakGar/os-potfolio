@@ -1,0 +1,112 @@
+.window {
+  position: absolute !important;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  min-width: 300px;
+  min-height: 400px;
+  transition: opacity 0.2s;
+  border: 1px solid #00000004;
+}
+
+.window.active {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.window-header {
+  height: 32px;
+  background: rgba(236, 236, 236, 0.9);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+  margin-right: 8px;
+  -webkit-app-region: no-drag;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.control.close {
+  background: #ff5f57;
+}
+
+.control.close:hover::before {
+  content: "×";
+  opacity: 1;
+  font-size: 14px;
+  color: #4a0002;
+}
+
+.control.minimize {
+  background: #febc2e;
+}
+
+.control.minimize:hover::before {
+  content: "−";
+  opacity: 1;
+  font-size: 14px;
+  color: #5a4201;
+}
+
+.control.maximize {
+  background: #28c840;
+}
+
+.control.maximize:hover::before {
+  content: "+";
+  opacity: 1;
+  font-size: 14px;
+  color: #0b4f14;
+}
+
+.window-title {
+  color: #4a4a4a;
+  font-size: 13px;
+  font-weight: 500;
+  flex: 1;
+  text-align: center;
+  margin-left: -80px; /* Offset for window controls */
+}
+
+.window-content {
+  height: calc(100% - 32px);
+  overflow: hidden;
+}
+
+.window.maximized {
+  position: fixed !important;
+  top: 20px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 70px !important;
+  width: 100vw !important;
+  height: calc(100vh - 90px) !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
